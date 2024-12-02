@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  height: 100vh;
+}
+
+.container {
+  width: 35rem;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.spacer {
+  height: 1rem;
+}
+
+.container h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.container input[type="text"],
+.container button,
+.container content {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  /* Ensures padding and border are included in width */
+}
+
+.container input[type="text"] {
+  margin-bottom: 10px;
+  /* Space between input and button */
+  border: 1px solid #ddd;
+}
+
+.container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.valid {
+  color: #28a745;
+}
+
+.invalid {
+  color: #dc3545;
+}
+
+.collapsible {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.8rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
+  background-color: #0056b3;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  border: 3px solid #007bff;
+  border-radius: 0.25rem;
+  outline: 2rem;
+  align-self: center;
+  background-color: #333;
+  color: #0f0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
