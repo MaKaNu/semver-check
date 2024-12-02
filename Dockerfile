@@ -18,4 +18,12 @@ ADD . /app
 # Sync the project
 RUN uv sync --frozen
 
-CMD [ "python", "semver_check/foo.py"]
+# Expose port 8000 for the Flask/gunicorn app
+EXPOSE 8000
+
+# Set the environment variable to let Flask know it is running in production mode
+ENV FLASK_ENV=production
+
+CMD [ "uv", "run", "gunicorn", "-w", "4", "--bind", "0.0.0.0:8000", "semver_check:app"]
+
+#CMD [ "uv", "run" "gunicorn", "-b", "0.0.0.0:5000", "app:semver_check"]
