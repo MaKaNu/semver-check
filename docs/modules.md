@@ -1,1 +1,1 @@
-::: semver_check.foo
+::: semver_check.server
