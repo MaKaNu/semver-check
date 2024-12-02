@@ -1,3 +1,5 @@
+from typing import Union
+
 import flask
 from flask import Flask, jsonify, render_template, request
 
@@ -13,7 +15,7 @@ def home() -> str:
 
 
 @app.route("/validate", methods=["POST"])
-def validate_version() -> tuple[flask.wrappers.Response | str, int]:
+def validate_version() -> tuple[Union[flask.wrappers.Response, str], int]:
     """Endpoint to validate SemVer strings."""
     request.get_data(as_text=True)
     version = request.data.decode("utf-8").strip()  # Get raw text from the body
